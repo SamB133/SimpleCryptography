@@ -25,12 +25,6 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
 reverseAlphabet = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q",
                    "p", "o", "n", "m", "l", "k", "j", "i", "h", "g",
                    "f", "e", "d", "c", "b", "a"]
-doubleAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
-                  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-                  "u", "v", "w", "x", "y", "z", "a", "b", "c", "d",
-                  "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
-                  "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
-                  "y", "z"]
 
 def cipherAtbash(phrase):
    
@@ -78,7 +72,7 @@ def cipherROT(phrase):
         if (phrase[i].isalpha()):
             for j in range(len(alphabet)):
                 if (phrase[i] == alphabet[j]):
-                    cipheredPhrase += doubleAlphabet[j - 26 + rotations]
+                    cipheredPhrase += alphabet[j - 26 + rotations]
         else:
             cipheredPhrase += phrase[i]
 
@@ -129,7 +123,7 @@ def decipherROT(phrase):
     for i in range(len(phrase)):
         if (phrase[i].isalpha()):
             for j in range(len(alphabet)):
-                if (phrase[i] == doubleAlphabet[j - rotations]):
+                if (phrase[i] == alphabet[j - rotations]):
                     decipheredPhrase += alphabet[j]
         else:
             decipheredPhrase += phrase[i]
